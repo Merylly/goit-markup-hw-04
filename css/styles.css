@@ -1,5 +1,6 @@
 :root {
   --brand-color: #4d5ae5;
+  --ligth-color: #f4f4fd;
 }
 
 body {
@@ -47,6 +48,8 @@ img {
 
 .header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: зі значенням 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-inner {
@@ -64,33 +67,6 @@ img {
 .header-list {
   display: flex;
   gap: 40px;
-}
-
-.header-list-item:first-child:hover::after {
-  content: "";
-  display: block;
-  background-color: #404bbf;
-  width: 48px;
-  height: 4px;
-  border-radius: 2px;
-}
-
-.header-list-item:nth-child(2):hover::after {
-  content: "";
-  display: block;
-  background-color: #404bbf;
-  width: 66px;
-  height: 4px;
-  border-radius: 2px;
-}
-
-.header-list-item:last-child:hover::after {
-  content: "";
-  display: block;
-  background-color: #404bbf;
-  width: 67px;
-  height: 4px;
-  border-radius: 2px;
 }
 
 .logo {
@@ -113,6 +89,8 @@ img {
 }
 
 .nav-link {
+  position: relative;
+  color: #404bbf;
   display: inline-block;
   padding: 24px 0;
   font-weight: 500;
@@ -120,6 +98,17 @@ img {
   letter-spacing: 0.02rem;
   color: inherit;
   color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
 }
 
 .nav-link:hover,
@@ -140,6 +129,7 @@ img {
   line-height: 1.5em;
   letter-spacing: 0.02rem;
   color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link:hover,
@@ -190,6 +180,7 @@ img {
   min-width: 169px;
   height: 56px;
   border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -283,23 +274,37 @@ img {
 .team-socials {
   display: flex;
   gap: 24px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 .team-social-item {
   padding-top: 20px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-icon {
+  fill: var(--ligth-color);
 }
 
 .team-icon-bg {
+  width: 100%;
+  height: 100%;
   background-color: #4d5ae5;
   border-radius: 50%;
   padding: 12px;
-  fill: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-icon-bg:hover,
+.team-icon-bg:focus {
+  background-color: #404bbf;
 }
 
 .picture-name {
-  padding: 32px 16px;
+  padding: 32px 0 32px;
   text-align: center;
 }
 
@@ -317,6 +322,13 @@ img {
 
 .portfolio-item {
   width: calc((100% - 48px) / 3);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  transform: translateY(0%);
 }
 
 .portfolio-product {
@@ -324,22 +336,21 @@ img {
   overflow: hidden;
 }
 
-.portfolio-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: #4d5ae5;
-  transform: translateY(100%);
-  transition: transform 2s;
-}
-
 .overlay-text {
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: #f4f4fd;
+  color: var(--ligth-color);
   padding: 40px 32px;
+  position: absolute;
+  top: 0;
+  background-color: #4d5ae5;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  width: 100%;
 }
 
-.portfolio-item:hover .portfolio-overlay {
+.portfolio-item:hover .overlay-text {
   transform: translateY(0%);
 }
 
@@ -376,11 +387,14 @@ img {
   line-height: 1.5em;
   letter-spacing: 0.02em;
   color: #f4f4fd;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  font-weight: 500;
 }
 
 .footer-flex {
   display: flex;
+  align-items: baseline;
+  margin-right: 120px;
   gap: 120px;
 }
 
@@ -391,14 +405,29 @@ img {
   align-items: center;
 }
 
-
 .footer-social-item {
-  padding-top: 20px;
+  width: 40px;
+  height: 40px;
+  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon-bg {
   background-color: #4d5ae5;
   border-radius: 50%;
-  padding: 12px;
+  padding: 8px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.footer-icon {
   fill: #ffffff;
+}
+
+.footer-icon-bg:hover, .footer-icon-bg:focus {
+  background-color: #31d0aa;
 }
