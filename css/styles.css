@@ -102,7 +102,7 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-link::after {
+.header-list-item::after {
   content: "";
   position: absolute;
   left: 0;
@@ -277,11 +277,13 @@ img {
   gap: 24px;
   justify-content: center;
   align-items: center;
+  margin-top: 8px;
 }
 
 .team-social-item {
-  padding-top: 20px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 40px;
+  height: 40px;
+  
 }
 
 .team-icon {
@@ -297,6 +299,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-icon-bg:hover,
@@ -412,7 +415,6 @@ img {
 .footer-social-item {
   width: 40px;
   height: 40px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon-bg {
@@ -424,6 +426,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon {
