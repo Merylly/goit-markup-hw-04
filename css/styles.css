@@ -1,6 +1,7 @@
 :root {
   --brand-color: #4d5ae5;
   --ligth-color: #f4f4fd;
+  --white-color: #ffffff;
 }
 
 body {
@@ -48,7 +49,7 @@ img {
 
 .header {
   border-bottom: 1px solid #e7e9fc;
-  box-shadow: зі значенням 0px 2px 1px rgba(46, 47, 66, 0.08),
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
@@ -386,7 +387,7 @@ img {
   width: 264px;
   line-height: 1.5em;
   letter-spacing: 0.02em;
-  color: #f4f4fd;
+  color: var(--white-color);
   margin-bottom: 16px;
   font-weight: 500;
 }
@@ -394,8 +395,11 @@ img {
 .footer-flex {
   display: flex;
   align-items: baseline;
-  margin-right: 120px;
   gap: 120px;
+}
+
+.footer-info {
+  margin-right: 120px;
 }
 
 .footer-socials {
@@ -408,7 +412,7 @@ img {
 .footer-social-item {
   width: 40px;
   height: 40px;
-  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon-bg {
@@ -422,12 +426,11 @@ img {
   align-items: center;
 }
 
-
-
 .footer-icon {
-  fill: #ffffff;
+  fill: var(--ligth-color);
 }
 
-.footer-icon-bg:hover, .footer-icon-bg:focus {
+.footer-icon-bg:hover,
+.footer-icon-bg:focus {
   background-color: #31d0aa;
 }
