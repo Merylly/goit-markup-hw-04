@@ -90,17 +90,23 @@ img {
 }
 
 .nav-link {
-  position: relative;
-  color: #404bbf;
   display: inline-block;
   padding: 24px 0;
   font-weight: 500;
   line-height: 1.5em;
   letter-spacing: 0.02rem;
+  color: inherit;
+  color: #2e2f42;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-link::after {
+.nav-link-accent {
+  color: #404bbf;
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link-accent::after {
   content: "";
   position: absolute;
   left: 0;
@@ -281,7 +287,6 @@ img {
 .team-social-item {
   width: 40px;
   height: 40px;
-  
 }
 
 .team-icon {
