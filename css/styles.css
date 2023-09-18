@@ -62,7 +62,6 @@ img {
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 76px;
 }
 
 .header-list {
@@ -108,6 +107,7 @@ img {
 
 .nav-link-accent::after {
   content: "";
+  width: 100%;
   position: absolute;
   left: 0;
   bottom: -1px;
@@ -389,6 +389,14 @@ img {
   color: #f4f4fd;
 }
 
+.footer-text-info {
+  line-height: 1.5em;
+  letter-spacing: 0.02em;
+  color: var(--white-color);
+  width: 264px;
+  font-weight: 400;
+}
+
 .footer-text {
   width: 264px;
   line-height: 1.5em;
@@ -401,7 +409,6 @@ img {
 .footer-flex {
   display: flex;
   align-items: baseline;
-  gap: 120px;
 }
 
 .footer-info {
